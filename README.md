@@ -7,8 +7,16 @@ redmine-helper
 
 * `.env.sample` を `.env` にリネームし、コマンドを環境に合わせて記述してください。
 * `cron/crontab.js` を編集して、スケジュールを設定してください。
+* そして `npm install` 。
 
-あとは、`npm install` して `npm start` で。
+なお、[pm2](https://www.npmjs.com/package/pm2) を使用し、root権限での実行を推奨します。
+
+```
+sudo npm install pm2 -g
+sudo pm2 startup
+sudo pm2 start redmine-helper/bin/www --name=redmine-helper
+sudo pm2 save
+```
 
 ## Usage
 
